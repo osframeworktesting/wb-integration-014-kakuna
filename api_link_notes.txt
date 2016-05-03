@@ -1,0 +1,11 @@
+waterbutler/core/metadata.py def _json_api_links(self, resource)
+
+-------------
+waterbutler/server/api/v1/provider/metadata.py
+    async def get_folder(self):
+    data = await self.provider.metadata(self.path)
+        return self.write({'data': [x.json_api_serialized(self.resource) for x in data]})
+
+
+--------------
+waterbutler/providers/googledrive/provider.py  
